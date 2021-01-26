@@ -18,7 +18,9 @@ namespace WinFormServer {
     public partial class UnicontaLoginForm : Form {
         //private string UserName;
         //private string PassWord;
-        private Guid APIGuidKey = new Guid("866f316d-d0be-4b60-adac-7a86e3b9f51a");
+        private Guid APIGuidKey = new Guid("");
+        private CrudAPI CrudAPI;
+        private Company CurrentCompany;
 
         public UnicontaLoginForm() {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace WinFormServer {
             string UserName = UnicontaUsernameInput.Text; // take input and store in local variable UserName.
             string PassWord = UnicontaPasswordInput.Text; // take input and store in local variable PassWord.
             if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(PassWord)) {
-                bool UnicontaLogin = await Uniconta_Login(UserName,PassWord,UnicSess);
+                bool UnicontaLogin = await Uniconta_Login(UserName, PassWord, UnicSess);
                 if (UnicontaLogin) { // if login successful. 
                     MessageBox.Show("Logged in"); // check for login.
                 } else { // if login fails.
@@ -49,12 +51,26 @@ namespace WinFormServer {
             // not in use anymore, after the code about is better as it is Asy. Sync method.
             // ErrorCodes Login = UnicSess.LoginAsync(UserName, PassWord, LoginType.API, APIGuidKey).Result;
             MessageBox.Show(LoginRes.ToString());
-            if (LoginRes == ErrorCodes.Succes)
+            if (LoginRes == ErrorCodes.Succes) {
                 return false;
+            }
+            await InitializeCompany(UnicSess);
+            CrudAPI = new CrudAPI(UnicSess, CurrentCompany);
+
             return true;
         }
         private async Task Uniconta_LogOut(Session UnicSess) {
             await UnicSess.LogOut();
+        }
+        private async Task InitializeCompany(Session UnicSess) {
+            // If Session has a default company, use DefaultComapny as CurrentCompany
+            if (UnicSess.DefaultCompany != null) {
+                CurrentCompany = UnicSess.DefaultCompany;
+                return;
+            }
+
+            // TODO: Change Company ID 0 to your company's ID
+            CurrentCompany = await UnicSess.OpenCompany(-1, false);
         }
     }
 }
