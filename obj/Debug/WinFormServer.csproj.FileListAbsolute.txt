@@ -38,9 +38,9 @@ C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.Form1.resou
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.Properties.Resources.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.SessionForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.TextFormatStringForm.resources
-C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.csproj.GenerateResource.cache
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.csproj.CoreCompileInputs.cache
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.csproj.CopyComplete
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.exe
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.pdb
+C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaLoginForm.resources

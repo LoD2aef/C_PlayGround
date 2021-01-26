@@ -62,7 +62,7 @@ namespace WinFormServer {
 
         private void WinFormUnicontaButton_Click(object sender, EventArgs e) {
             Thread thread = new Thread(() => {
-                UnicontaForm UnicontaForm = new UnicontaForm();
+                UnicontaLoginForm UnicontaForm = new UnicontaLoginForm();
                 Application.Run(UnicontaForm);
             });
             thread.SetApartmentState(ApartmentState.STA);

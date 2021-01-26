@@ -15,31 +15,46 @@ using Uniconta.Common.User;
 using Uniconta.DataModel;
 
 namespace WinFormServer {
-    public partial class UnicontaForm : Form {
-        private string UserName;
-        private string PassWord;
-        private string APIGuidKey = "";
+    public partial class UnicontaLoginForm : Form {
+        //private string UserName;
+        //private string PassWord;
+        private Guid APIGuidKey = new Guid("866f316d-d0be-4b60-adac-7a86e3b9f51a");
 
-        public UnicontaForm() {
+        public UnicontaLoginForm() {
             InitializeComponent();
         }
 
-        private void Connection_SessionButton_Click(object sender, EventArgs e) {
-            UnicontaConnection UnicConn = new UnicontaConnection(APITarget.Live);
-            Session UnicSess = new Session(UnicConn);
-            UserName = UsernameInput.Text;
-            PassWord = PasswordInput.Text;
+        private async void Connection_SessionButton_Click(object sender, EventArgs e) { // Click on the login button
+            // instance a UnicontaConnection with the name UnicConn, the UnicontaConnection set it's APITarget to Live.
+            UnicontaConnection UnicConn = new UnicontaConnection(APITarget.Live); // Live is the only Uniconta server.
+            Session UnicSess = new Session(UnicConn); // instance a Uniconta Session, where we store the UnicConn.
+            string UserName = UnicontaUsernameInput.Text; // take input and store in local variable UserName.
+            string PassWord = UnicontaPasswordInput.Text; // take input and store in local variable PassWord.
             if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(PassWord)) {
-                ErrorCodes Login = UnicSess.LoginAsync(UserName, PassWord, LoginType.API, new Guid(APIGuidKey)).Result;
-                if (Login == ErrorCodes.Succes) {
-                    MessageBox.Show("Logged in");
-                } else {
+                bool UnicontaLogin = await Uniconta_Login(UserName,PassWord,UnicSess);
+                if (UnicontaLogin) { // if login successful. 
+                    MessageBox.Show("Logged in"); // check for login.
+                } else { // if login fails.
                     MessageBox.Show("Not logged in, something wrong");
                 }
             } else { // username or password missing
                 MessageBox.Show($"one or both missing username : {UserName} password : {PassWord}");
-                MessageBox.Show(string.Format("one or both missing username : {0} password : {1}", UserName, PassWord));
+                //  not in use anymore after the code about looks better and function the same, for this perpurse. 
+                //  MessageBox.Show(string.Format("one or both missing username : {0} password : {1}", UserName, PassWord));
             }
+        }
+        private async Task<bool> Uniconta_Login(string username, string password, Session UnicSess) {
+            // Attempting to login. gets a ErrorCodes.Succes if login successful. Async method.
+            ErrorCodes LoginRes = await UnicSess.LoginAsync(username, password, LoginType.API, APIGuidKey);
+            // not in use anymore, after the code about is better as it is Asy. Sync method.
+            // ErrorCodes Login = UnicSess.LoginAsync(UserName, PassWord, LoginType.API, APIGuidKey).Result;
+            MessageBox.Show(LoginRes.ToString());
+            if (LoginRes == ErrorCodes.Succes)
+                return false;
+            return true;
+        }
+        private async Task Uniconta_LogOut(Session UnicSess) {
+            await UnicSess.LogOut();
         }
     }
 }
