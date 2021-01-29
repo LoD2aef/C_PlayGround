@@ -1,6 +1,6 @@
 ﻿
 namespace WinFormServer {
-    partial class UnicontaActionForm {
+    partial class UnicontaLoggedInForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>

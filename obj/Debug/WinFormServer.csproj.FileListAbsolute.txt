@@ -44,4 +44,4 @@ C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.csproj.Copy
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.exe
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.pdb
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaLoginForm.resources
-C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaActionForm.resources
+C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaLoggedInForm.resources

@@ -8,22 +8,28 @@ using Uniconta.Common.User;
 using Uniconta.DataModel;
 
 namespace WinFormServer {
-    class UnicontaAction {
-        private Guid APIGuidKey = new Guid("");
-        private CrudAPI CrudAPI;
-        private Company BaseCompany;
-        private Session UnicSess;
+    class UnicontaActionHandler {
+        private Guid APIGuidKey = new Guid(""); // API key
+        private CrudAPI CrudAPI; // variable for Uniconta CrudAPI. Use for CRUD functionalities.
+        private Company BaseCompany; // variable for Uniconta Company. What Company data shall have data manipulation.
+        private Session UnicSess; // variable for Uniconta Session with UnicontaConnection to the APITarget server.
 
-        private static UnicontaAction UnicActionClass;
+        private static UnicontaActionHandler UniActHandler; // variable for Class instands to use for call of methods
+        private static UnicontaActionCRUD UniActCRUD; // variable for Class instands to use for call of methods
 
-        public static UnicontaAction Uniconta_GetInstance() {
-            if (UnicActionClass == null ) {
-                UnicActionClass = new UnicontaAction();
+        public static UnicontaActionHandler Uniconta_GetInstanceHandler() { // Get instands of Handler Class
+            if (UniActHandler == null ) { // check if there is a instands of the Handler class
+                UniActHandler = new UnicontaActionHandler(); // make a instands of the Handler class and set to variable
             }
-            return UnicActionClass;
+            return UniActHandler; // return the instand of the Handle class.
         }
-
-        public void Uniconta_SetSession() {
+        public static UnicontaActionHandler Uniconta_GetInstanceCRUD() { // Get instands of CRUD Class
+            if (UniActCRUD == null) { // check if there is a instands of the CRUD class
+                UniActCRUD = new UnicontaActionCRUD(); // make a instands of the CRUD class and set to variable
+            }
+            return UniActHandler; // return the instand of the CRUD class.
+        }
+        private void Uniconta_SetSession() {
             // instance a UnicontaConnection with the name UnicConn, the UnicontaConnection set it's APITarget to Live.
             UnicontaConnection UnicConn = new UnicontaConnection(APITarget.Live); // Live is the only Uniconta server.
             UnicSess = new Session(UnicConn); // instance a Uniconta Session, where we store the UnicConn.
@@ -43,7 +49,7 @@ namespace WinFormServer {
             }
             return "Internal Error within Uniconta"; // return a display string for end user
         }
-        private async Task Uniconta_InitializeCompany() {
+        private async Task Uniconta_InitializeCompany() { // instands the BaseCompany variable if miss, if not return it.
             if (UnicSess.DefaultCompany != null) { // check if Session has a value for DefaultCompany.
                 BaseCompany = UnicSess.DefaultCompany; // if DefaultCompany is not null set vari BaseCompany to be it. 
                 return; // used to end Method; 
@@ -56,20 +62,10 @@ namespace WinFormServer {
                 await UnicSess.LogOut(); // LogOut of the Uniconta Session.
             }
         }
-        public async Task<string> Uniconta_Populate() { //
-            // Initialize Item
-            var myItem = new InvItemClient {
-                Item = "109",
-                Name = "Toothbrush",
-                CostPrice = 29.95,
-                SalesPrice1 = 100.00,
-            };
-            // Insert Item
-            var result = await CrudAPI.Insert(myItem);
-            if (result != ErrorCodes.Succes) {
-                return ("Unable to insert item. Error: " + result.ToString());
-            }
-            return ("Succesfully inserted item: " + myItem.Item + ", name: " + myItem.Name + "into Uniconta");
+        public async Task<string> Uniconta_Populate() { // Method for call the CRUD method in another class
+            Uniconta_GetInstanceCRUD(); // instands the crud class if missing else, useless
+            string res = await UniActCRUD.Uniconta_Insert(CrudAPI); // call the insert method with CrudAPi object
+            return res; // return the result of the insert. string with what happen and so on
         }
     }
 }

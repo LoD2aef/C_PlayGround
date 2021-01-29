@@ -102,12 +102,13 @@
     <Compile Include="TextFormatStringForm.Designer.cs">
       <DependentUpon>TextFormatStringForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UnicontaAction.cs" />
-    <Compile Include="UnicontaActionForm.cs">
+    <Compile Include="UnicontaActionCRUD.cs" />
+    <Compile Include="UnicontaActionHandler.cs" />
+    <Compile Include="UnicontaLoggedInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UnicontaActionForm.Designer.cs">
-      <DependentUpon>UnicontaActionForm.cs</DependentUpon>
+    <Compile Include="UnicontaLoggedInForm.Designer.cs">
+      <DependentUpon>UnicontaLoggedInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UnicontaWrapper.cs" />
     <Compile Include="UnicontaLogInForm.cs">
@@ -144,8 +145,8 @@
     <EmbeddedResource Include="TextFormatStringForm.resx">
       <DependentUpon>TextFormatStringForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnicontaActionForm.resx">
-      <DependentUpon>UnicontaActionForm.cs</DependentUpon>
+    <EmbeddedResource Include="UnicontaLoggedInForm.resx">
+      <DependentUpon>UnicontaLoggedInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnicontaLogInForm.resx">
       <DependentUpon>UnicontaLogInForm.cs</DependentUpon>
