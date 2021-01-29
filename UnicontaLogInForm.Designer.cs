@@ -32,9 +32,9 @@
             // 
             // UnicontaLoginButton
             // 
-            this.UnicontaLoginButton.Location = new System.Drawing.Point(87, 194);
+            this.UnicontaLoginButton.Location = new System.Drawing.Point(15, 72);
             this.UnicontaLoginButton.Name = "UnicontaLoginButton";
-            this.UnicontaLoginButton.Size = new System.Drawing.Size(150, 23);
+            this.UnicontaLoginButton.Size = new System.Drawing.Size(202, 23);
             this.UnicontaLoginButton.TabIndex = 0;
             this.UnicontaLoginButton.Text = "Login";
             this.UnicontaLoginButton.UseVisualStyleBackColor = true;
@@ -42,15 +42,15 @@
             // 
             // UnicontaUsernameInput
             // 
-            this.UnicontaUsernameInput.Location = new System.Drawing.Point(145, 67);
+            this.UnicontaUsernameInput.Location = new System.Drawing.Point(73, 9);
             this.UnicontaUsernameInput.Name = "UnicontaUsernameInput";
-            this.UnicontaUsernameInput.Size = new System.Drawing.Size(92, 20);
+            this.UnicontaUsernameInput.Size = new System.Drawing.Size(144, 20);
             this.UnicontaUsernameInput.TabIndex = 1;
             // 
             // UnicontaUsernameLabel
             // 
             this.UnicontaUsernameLabel.AutoSize = true;
-            this.UnicontaUsernameLabel.Location = new System.Drawing.Point(84, 67);
+            this.UnicontaUsernameLabel.Location = new System.Drawing.Point(12, 9);
             this.UnicontaUsernameLabel.Name = "UnicontaUsernameLabel";
             this.UnicontaUsernameLabel.Size = new System.Drawing.Size(55, 13);
             this.UnicontaUsernameLabel.TabIndex = 3;
@@ -59,7 +59,7 @@
             // UnicontaPasswordLabel
             // 
             this.UnicontaPasswordLabel.AutoSize = true;
-            this.UnicontaPasswordLabel.Location = new System.Drawing.Point(84, 107);
+            this.UnicontaPasswordLabel.Location = new System.Drawing.Point(12, 49);
             this.UnicontaPasswordLabel.Name = "UnicontaPasswordLabel";
             this.UnicontaPasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.UnicontaPasswordLabel.TabIndex = 4;
@@ -67,9 +67,9 @@
             // 
             // UnicontaPasswordInput
             // 
-            this.UnicontaPasswordInput.Location = new System.Drawing.Point(145, 104);
+            this.UnicontaPasswordInput.Location = new System.Drawing.Point(73, 46);
             this.UnicontaPasswordInput.Name = "UnicontaPasswordInput";
-            this.UnicontaPasswordInput.Size = new System.Drawing.Size(92, 20);
+            this.UnicontaPasswordInput.Size = new System.Drawing.Size(144, 20);
             this.UnicontaPasswordInput.TabIndex = 5;
             this.UnicontaPasswordInput.UseSystemPasswordChar = true;
             // 
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 229);
+            this.ClientSize = new System.Drawing.Size(229, 112);
             this.Controls.Add(this.UnicontaPasswordInput);
             this.Controls.Add(this.UnicontaPasswordLabel);
             this.Controls.Add(this.UnicontaUsernameLabel);
@@ -85,6 +85,7 @@
             this.Controls.Add(this.UnicontaLoginButton);
             this.Name = "UnicontaLoginForm";
             this.Text = "Uniconta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UnicontaLoginForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

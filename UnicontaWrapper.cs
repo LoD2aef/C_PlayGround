@@ -2,7 +2,7 @@
 using Uniconta.ClientTools.DataModel;
 
 namespace WinFormServer {
-    class UnicontaClassWrapper {
+    class UnicontaWrapper {
         public List<DebtorClient> debtors { get; set; }
         public List<DebtorGroupClient> dGroups { get; set; }
         public List<DebtorPriceListClient> dPrices { get; set; }

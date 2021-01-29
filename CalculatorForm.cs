@@ -12,7 +12,7 @@ namespace WinFormServer {
     public partial class CalculatorForm : Form {
         string inputValue;
         string resultValue;
-        bool actionIsActive;
+        bool ActionIsActive;
         public CalculatorForm() {
             InitializeComponent();
         }
@@ -103,7 +103,7 @@ namespace WinFormServer {
             }
         }
         private void TheMathInputAction(string action) {
-            if (actionIsActive != true) {
+            if (ActionIsActive != true) {
                 switch (action) {
                     case "ClearAll":
                         inputValue = "";

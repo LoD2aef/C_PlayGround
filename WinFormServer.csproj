@@ -102,14 +102,21 @@
     <Compile Include="TextFormatStringForm.Designer.cs">
       <DependentUpon>TextFormatStringForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UnicontaClassWrapper.cs" />
-    <Compile Include="UnicontaForm.cs">
+    <Compile Include="UnicontaAction.cs" />
+    <Compile Include="UnicontaActionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UnicontaForm.Designer.cs">
-      <DependentUpon>UnicontaForm.cs</DependentUpon>
+    <Compile Include="UnicontaActionForm.Designer.cs">
+      <DependentUpon>UnicontaActionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UnicontaClassDemo.cs" />
+    <Compile Include="UnicontaWrapper.cs" />
+    <Compile Include="UnicontaLogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnicontaLogInForm.Designer.cs">
+      <DependentUpon>UnicontaLogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnicontaXtraInfo.cs" />
     <EmbeddedResource Include="Async_SyncForm.resx">
       <DependentUpon>Async_SyncForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,8 +144,11 @@
     <EmbeddedResource Include="TextFormatStringForm.resx">
       <DependentUpon>TextFormatStringForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnicontaForm.resx">
-      <DependentUpon>UnicontaForm.cs</DependentUpon>
+    <EmbeddedResource Include="UnicontaActionForm.resx">
+      <DependentUpon>UnicontaActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnicontaLogInForm.resx">
+      <DependentUpon>UnicontaLogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

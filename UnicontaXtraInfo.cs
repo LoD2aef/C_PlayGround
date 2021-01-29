@@ -15,6 +15,7 @@ namespace WinFormServer {
         private string PassWord;
         private string APIGuidKey = "00000000-0000-0000-0000-000000000000";
         private CrudAPI UnicCrudAPI;
+        
 
         private void Uniconta_Connection() { // Connection
             // Instantiate a connection. This identifies the ERP server. There is only the Live server rigth now.
@@ -100,7 +101,7 @@ namespace WinFormServer {
             var AccountList = await qapi.Query();
              */
         }
-        private async void Uniconta_MasterDetail() { // Master/Detail Query.
+        private void Uniconta_MasterDetail() { // Master/Detail Query.
             // Our ERP server knows all the relations between classes, so you do not have to specify much to search the details for a
             // master record. The second argument is a “Masters” for a given class. In this case, we search all the transactions that
             // belongs to the given account.
