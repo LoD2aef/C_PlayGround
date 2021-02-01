@@ -13,5 +13,17 @@ namespace WinFormServer {
             MessageBox.Show(res); // display result to user
             Console.WriteLine(res); // internel info for testing
         }
+
+        private async void button2_Click(object sender, EventArgs e) {
+            string res = await UniAct.Uniconta_Table(); // call method to create items in uniconta
+            MessageBox.Show(res); // display result to user
+            Console.WriteLine(res); // internel info for testing
+        }
+
+        private async void button3_Click(object sender, EventArgs e) {
+            string res = await UniAct.Uniconta_TablePopulate(); // call method to create items in uniconta
+            MessageBox.Show(res); // display result to user
+            Console.WriteLine(res); // internel info for testing
+        }
     }
 }

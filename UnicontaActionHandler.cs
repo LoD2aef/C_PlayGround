@@ -67,5 +67,15 @@ namespace WinFormServer {
             string res = await UniActCRUD.Uniconta_Insert(CrudAPI); // call the insert method with CrudAPi object
             return res; // return the result of the insert. string with what happen and so on
         }
+        public async Task<string> Uniconta_Table() { // Method for call the CRUD method in another class
+            Uniconta_GetInstanceCRUD(); // instands the crud class if missing else, useless
+            string res = await UniActCRUD.Uniconta_InsertTable(CrudAPI); // call the insert method with CrudAPi object
+            return res; // return the result of the insert. string with what happen and so on
+        }
+        public async Task<string> Uniconta_TablePopulate() { // Method for call the CRUD method in another class
+            Uniconta_GetInstanceCRUD(); // instands the crud class if missing else, useless
+            string res = await UniActCRUD.Uniconta_InsertPopulateTable(CrudAPI); // call the insert method with CrudAPi object
+            return res; // return the result of the insert. string with what happen and so on
+        }
     }
 }
