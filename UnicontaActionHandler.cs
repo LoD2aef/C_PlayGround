@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Uniconta.API.Service;
 using Uniconta.API.System;
-using Uniconta.ClientTools.DataModel;
 using Uniconta.Common;
 using Uniconta.Common.User;
 using Uniconta.DataModel;

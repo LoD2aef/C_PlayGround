@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    <Reference Include="Renci.SshNet, Version=2020.0.1.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2020.0.1\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadFileForm.Designer.cs">
+      <DependentUpon>ReadFileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SessionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,7 @@
     </Compile>
     <Compile Include="UnicontaActionCRUD.cs" />
     <Compile Include="UnicontaActionHandler.cs" />
+    <Compile Include="UnicontaActionReadOrder.cs" />
     <Compile Include="UnicontaLoggedInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +146,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReadFileForm.resx">
+      <DependentUpon>ReadFileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SessionForm.resx">
       <DependentUpon>SessionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +161,7 @@
     <EmbeddedResource Include="UnicontaLogInForm.resx">
       <DependentUpon>UnicontaLogInForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ImportData.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

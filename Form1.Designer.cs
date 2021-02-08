@@ -38,6 +38,7 @@
             this.WinFormChatServerButton = new System.Windows.Forms.Button();
             this.WinFormChatClientButton = new System.Windows.Forms.Button();
             this.ShutdownButton = new System.Windows.Forms.Button();
+            this.ReadFileButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WinFormCalculatorButton
@@ -141,11 +142,22 @@
             this.ShutdownButton.UseVisualStyleBackColor = true;
             this.ShutdownButton.Click += new System.EventHandler(this.ShutdownButton_Click);
             // 
+            // ReadFileButton
+            // 
+            this.ReadFileButton.Location = new System.Drawing.Point(13, 71);
+            this.ReadFileButton.Name = "ReadFileButton";
+            this.ReadFileButton.Size = new System.Drawing.Size(75, 23);
+            this.ReadFileButton.TabIndex = 10;
+            this.ReadFileButton.Text = "Read File";
+            this.ReadFileButton.UseVisualStyleBackColor = true;
+            this.ReadFileButton.Click += new System.EventHandler(this.ReadFileButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 261);
+            this.Controls.Add(this.ReadFileButton);
             this.Controls.Add(this.ShutdownButton);
             this.Controls.Add(this.WinFormChatClientButton);
             this.Controls.Add(this.WinFormChatServerButton);
@@ -174,6 +186,7 @@
         private System.Windows.Forms.Button WinFormChatServerButton;
         private System.Windows.Forms.Button WinFormChatClientButton;
         private System.Windows.Forms.Button ShutdownButton;
+        private System.Windows.Forms.Button ReadFileButton;
     }
 }
 

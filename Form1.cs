@@ -108,5 +108,9 @@ namespace WinFormServer {
         private void ShutdownButton_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void ReadFileButton_Click(object sender, EventArgs e) {
+
+        }
     }
 }
