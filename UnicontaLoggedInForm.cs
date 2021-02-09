@@ -25,5 +25,9 @@ namespace WinFormServer {
             MessageBox.Show(res); // display result to user
             Console.WriteLine(res); // internel info for testing
         }
+
+        private void button4_Click(object sender, EventArgs e) {
+            UniAct.Uniconta_InsertCSVFile();
+        }
     }
 }

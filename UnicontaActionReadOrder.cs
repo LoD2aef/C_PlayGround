@@ -12,12 +12,13 @@ using Uniconta.Common;
 namespace WinFormServer {
     class UnicontaActionReadOrder {
         public string Name => "";
-        private string error;
+        private string errorMSG;
         private CrudAPI crudAPI;
 
         public event EventHandler OnExecute;
 
-        public ErrorCodes Execute(UnicontaBaseEntity master, UnicontaBaseEntity currentRow, IEnumerable<UnicontaBaseEntity> source, string command, string args) {
+        public ErrorCodes Execute(CrudAPI api) {
+            crudAPI = api;
             var dialog = new OpenFileDialog {
                 Filter = "CSV | *csv"
             };
@@ -25,15 +26,15 @@ namespace WinFormServer {
                 return ErrorCodes.Succes;
             }
             var lines = new List<string[]>();
-           
+
             using (StreamReader reader = new StreamReader(dialog.FileName)) {
                 while (!reader.EndOfStream) {
                     string line = reader.ReadLine();
-                    string[] values = line.Split(';');
+                    string[] values = line.Split(',');
                     lines.Add(values);
                 }
             }
-            
+            lines.RemoveAt(0);
             createLines(lines);
             return ErrorCodes.Succes;
         }
@@ -41,15 +42,20 @@ namespace WinFormServer {
         private async void createLines(List<string[]> lines) {
             var orders = new List<DebtorOrderClient>();
             var ols = new List<DebtorOrderLineClient>();
-            var items = await crudAPI.Query<InvItemClient>();
-            var debtors = await crudAPI.Query<DebtorClient>();
+            var items = await crudAPI.Query<InvItemClient>(); // getting all items
+            var debtors = await crudAPI.Query<DebtorClient>(); // getting all debtors
 
             foreach (string[] s in lines) {
-                DebtorOrderClient order;
-                order = orders.Where(o => o.Account == s[0]).FirstOrDefault();
-                if (order == null) {
-                    order = new DebtorOrderClient();
-                    order.SetMaster(debtors.Where(d => d.Account == s[0]).First());
+                DebtorOrderClient order; // creating a local variable of the type DebtorOrderClient.
+                //foreach (var deb in debtors) { // run thou all debtors from the query
+                //    Console.WriteLine(deb.Account); // checking debtor account (number)
+                //    Console.WriteLine(s[0]); // checking file debtor account (number)
+                //    Console.WriteLine(deb.Account == s[0]); // compairing the debtor with file
+                //}
+                order = orders.Where(o => o.Account == s[0]).FirstOrDefault(); // always null.
+                if (order == null) { // if null, as it always will be because we never pop the variable
+                    order = new DebtorOrderClient(); // pop the variable with a empty object
+                    order.SetMaster(debtors.Where(d => d.Account == s[0]).First()); // 
                     orders.Add(order);
                     var orderres = await crudAPI.Insert(order);
                 }
@@ -57,14 +63,14 @@ namespace WinFormServer {
                 var fp = new FindPrices(order, crudAPI) {
                     UseCustomerPrices = true
                 };
-                await fp.loadPriceList();
+                // await fp.loadPriceList(); // hvad fuck gøre dette ? HVAD GØRE DU!!! ?
                 var ol = new DebtorOrderLineClient {
                     Qty = double.Parse(s[2]),
                     Item = item.Item,
-                    Date = DateTime.Parse(s[3]),
+                    // Date = DateTime.Parse(s[3]),
                 };
                 ol.SetMaster(order);
-                await fp.SetPriceFromItem(ol, item);
+                //await fp.SetPriceFromItem(ol, item); // hvad gøre disse ? virker fint uden ?_?
                 await crudAPI.Insert(ol);
             }
         }
@@ -72,7 +78,7 @@ namespace WinFormServer {
             return new string[] { };
         }
         public string GetErrorDescription() {
-            return error;
+            return errorMSG;
         }
         public void SetAPI(BaseAPI api) {
             crudAPI = api as CrudAPI;

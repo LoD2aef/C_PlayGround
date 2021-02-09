@@ -16,6 +16,7 @@ namespace WinFormServer {
             string loginRes = await UnicontaActionHandler.Uniconta_GetInstanceHandler().Uniconta_Login(username, password); 
             if (loginRes == "Login was Succesful") { // check if login was succesful
                 var t = new Thread(() => Application.Run(new UnicontaLoggedInForm())); // create a thread for the new form
+                t.SetApartmentState(ApartmentState.STA); // to remove ThreadStateException Error in openfiledialog 
                 t.Start(); // start the new thread form so it is not depending on this forms thread
                 Close(); // close the login form. this will not close the new loggedin form, as it runs on a differin thread
             }

@@ -15,9 +15,10 @@ namespace WinFormServer {
 
         private static UnicontaActionHandler UniActHandler; // variable for Class instands to use for call of methods
         private static UnicontaActionCRUD UniActCRUD; // variable for Class instands to use for call of methods
+        private static UnicontaActionReadOrder UniActRead; //
 
         public static UnicontaActionHandler Uniconta_GetInstanceHandler() { // Get instands of Handler Class
-            if (UniActHandler == null ) { // check if there is a instands of the Handler class
+            if (UniActHandler == null) { // check if there is a instands of the Handler class
                 UniActHandler = new UnicontaActionHandler(); // make a instands of the Handler class and set to variable
             }
             return UniActHandler; // return the instand of the Handle class.
@@ -28,10 +29,18 @@ namespace WinFormServer {
             }
             return UniActHandler; // return the instand of the CRUD class.
         }
+        public static UnicontaActionReadOrder Uniconta_GetInstanceRead() {
+            if (UniActRead == null) { // 
+                UniActRead = new UnicontaActionReadOrder(); // 
+            }
+            return UniActRead; //
+        }
         private void Uniconta_SetSession() {
-            // instance a UnicontaConnection with the name UnicConn, the UnicontaConnection set it's APITarget to Live.
-            UnicontaConnection UnicConn = new UnicontaConnection(APITarget.Live); // Live is the only Uniconta server.
-            UnicSess = new Session(UnicConn); // instance a Uniconta Session, where we store the UnicConn.
+            if (UnicSess == null) { // check if the is a UnicSess object before trying to create a new.
+                // instance a UnicontaConnection with the name UnicConn, the UnicontaConnection set it's APITarget to Live.
+                UnicontaConnection UnicConn = new UnicontaConnection(APITarget.Live); // Live is the only Uniconta server.
+                UnicSess = new Session(UnicConn); // instance a Uniconta Session, where we store the UnicConn.
+            }
         }
         public async Task<string> Uniconta_Login(string username, string password) {
             Uniconta_SetSession(); // call the Uniconta_SetSession method so the sesssion object is instance.
@@ -75,6 +84,11 @@ namespace WinFormServer {
             Uniconta_GetInstanceCRUD(); // instands the crud class if missing else, useless
             string res = await UniActCRUD.Uniconta_InsertPopulateTable(CrudAPI); // call the insert method with CrudAPi object
             return res; // return the result of the insert. string with what happen and so on
+        }
+        public void Uniconta_InsertCSVFile() {
+            Uniconta_GetInstanceRead();
+            Uniconta_SetSession();
+            UniActRead.Execute(CrudAPI);
         }
     }
 }
