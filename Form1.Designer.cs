@@ -39,6 +39,7 @@
             this.WinFormChatClientButton = new System.Windows.Forms.Button();
             this.ShutdownButton = new System.Windows.Forms.Button();
             this.ReadFileButton = new System.Windows.Forms.Button();
+            this.BigOAlgorithms = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WinFormCalculatorButton
@@ -152,11 +153,22 @@
             this.ReadFileButton.UseVisualStyleBackColor = true;
             this.ReadFileButton.Click += new System.EventHandler(this.ReadFileButton_Click);
             // 
+            // BigOAlgorithms
+            // 
+            this.BigOAlgorithms.Location = new System.Drawing.Point(113, 71);
+            this.BigOAlgorithms.Name = "BigOAlgorithms";
+            this.BigOAlgorithms.Size = new System.Drawing.Size(75, 23);
+            this.BigOAlgorithms.TabIndex = 11;
+            this.BigOAlgorithms.Text = "Big-O";
+            this.BigOAlgorithms.UseVisualStyleBackColor = true;
+            this.BigOAlgorithms.Click += new System.EventHandler(this.BigOAlgorithms_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 261);
+            this.Controls.Add(this.BigOAlgorithms);
             this.Controls.Add(this.ReadFileButton);
             this.Controls.Add(this.ShutdownButton);
             this.Controls.Add(this.WinFormChatClientButton);
@@ -187,6 +199,7 @@
         private System.Windows.Forms.Button WinFormChatClientButton;
         private System.Windows.Forms.Button ShutdownButton;
         private System.Windows.Forms.Button ReadFileButton;
+        private System.Windows.Forms.Button BigOAlgorithms;
     }
 }
 

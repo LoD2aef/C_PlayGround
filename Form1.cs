@@ -112,5 +112,14 @@ namespace WinFormServer {
         private void ReadFileButton_Click(object sender, EventArgs e) {
 
         }
+
+        private void BigOAlgorithms_Click(object sender, EventArgs e) {
+            Thread t = new Thread(() => {
+                BigOAlgorithms BOA = new BigOAlgorithms();
+                Application.Run(BOA);
+            });
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
     }
 }

@@ -64,6 +64,12 @@
     <Compile Include="Async_SyncForm.Designer.cs">
       <DependentUpon>Async_SyncForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BigOAlgorithms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BigOAlgorithms.Designer.cs">
+      <DependentUpon>BigOAlgorithms.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="UnicontaXtraInfo.cs" />
     <EmbeddedResource Include="Async_SyncForm.resx">
       <DependentUpon>Async_SyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BigOAlgorithms.resx">
+      <DependentUpon>BigOAlgorithms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CalculatorForm.resx">
       <DependentUpon>CalculatorForm.cs</DependentUpon>

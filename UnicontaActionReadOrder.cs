@@ -64,14 +64,19 @@ namespace WinFormServer {
                     UseCustomerPrices = true
                 };
                 // await fp.loadPriceList(); // hvad fuck gøre dette ? HVAD GØRE DU!!! ?
-                var ol = new DebtorOrderLineClient {
+                var DOL = new DebtorOrderLineClient {
                     Qty = double.Parse(s[2]),
                     Item = item.Item,
-                    // Date = DateTime.Parse(s[3]),
+                    // Date = DateTime.Parse(s[3]), // there is not 3 column ???
                 };
-                ol.SetMaster(order);
+                DOL.SetMaster(order);
+                var CC = new ContactClient {
+                    Name = "test",
+                    Email = "temp@maxium.dk",
+                };
+                CC.SetMaster(order);
                 //await fp.SetPriceFromItem(ol, item); // hvad gøre disse ? virker fint uden ?_?
-                await crudAPI.Insert(ol);
+                await crudAPI.Insert(DOL);
             }
         }
         public string[] GetDependentAssembliesName() {

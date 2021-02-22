@@ -63,7 +63,8 @@ namespace WinFormServer {
                 return; // used to end Method; 
             }
             int CompanyId = 34776; // CompanyId is the id of the company that wish to get data about.
-            BaseCompany = await UnicSess.OpenCompany(CompanyId, false); // set BaseCompany if not set yet to CompanyId
+            // BaseCompany = await UnicSess.OpenCompany(CompanyId, false); // set BaseCompany if not set yet to CompanyId
+            BaseCompany = await UnicSess.OpenCompany(CompanyId, true); // set the company as default for the user
         }
         public async Task Uniconta_LogOut() { // end the Uniconta Session
             if (UnicSess != null) { // check if there is a Uniconta Session to Close/LogOut.
