@@ -91,5 +91,10 @@ namespace WinFormServer {
             Uniconta_SetSession();
             UniActRead.Execute(CrudAPI);
         }
+        public async Task<string> Uniconta_GetDebitorsAsync() {
+            Uniconta_GetInstanceCRUD();
+            string listDeb = await UniActCRUD.Uniconta_Get_Debitor(CrudAPI);
+            return listDeb;
+        }
     }
 }

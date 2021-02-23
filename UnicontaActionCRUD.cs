@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Uniconta.API.System;
 using Uniconta.ClientTools.DataModel;
@@ -56,7 +57,7 @@ namespace WinFormServer {
                 new TableField
                 {
                     _RefTable = "Employee", // Foreign Key to Employee Table
-                    _Prompt = "Employee", 
+                    _Prompt = "Employee",
                     _Name = "Employee",
                     _FieldType = CustomTypeCode.String,
                 },
@@ -77,6 +78,36 @@ namespace WinFormServer {
             }
             var msg = String.Format("Succesfully inserted {0} fields into table {1}", newFields.Count, CurrentTableHeader.Name);
             return msg;
+        }
+        public async Task<string> Uniconta_Get_Debitor(CrudAPI CrudAPI) {
+            var debtors = await CrudAPI.Query<DebtorClient>();
+            string DebString = "";
+            List<Debtor> LiDeb = new List<Debtor>();
+            Debtor Deb1004 = new Debtor();
+            foreach (Debtor deb in debtors) {
+                LiDeb.Add(deb);
+                DebString += deb._Name;
+                DebString += " - ";
+                DebString += deb._Account;
+                DebString += "\n";
+                if (deb._Account == "1004") {
+                    Deb1004 = deb;
+                }
+            }
+            Debtor Deb42 = new Debtor() {
+                _Name = "CREADED DEMO",
+                _Account = "42",
+                _Country = CountryCode.Denmark,
+                _Language = Language.da,
+                _VatZone = VatZones.VatFree,
+            };
+            // ErrorCodes deleteRes = await CrudAPI.Delete(LiDeb);
+            // ErrorCodes delete1004 = await CrudAPI.Delete(Deb1004); // delete Debtor
+            // DebString += deleteRes.ToString(); // CouldNotDeleteRecordThatIsReferred
+            // DebString += delete1004.ToString();
+            //Thread.Sleep(30000);
+            await CrudAPI.Insert(LiDeb);
+            return DebString;
         }
     }
 }

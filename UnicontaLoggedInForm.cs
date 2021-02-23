@@ -29,5 +29,10 @@ namespace WinFormServer {
         private void button4_Click(object sender, EventArgs e) {
             UniAct.Uniconta_InsertCSVFile();
         }
+
+        private async void button5_ClickAsync(object sender, EventArgs e) {
+            string res = await UniAct.Uniconta_GetDebitorsAsync();
+            MessageBox.Show(res);
+        }
     }
 }
