@@ -94,19 +94,38 @@ namespace WinFormServer {
                     Deb1004 = deb;
                 }
             }
-            Debtor Deb42 = new Debtor() {
+            // ErrorCodes deleteRes = await CrudAPI.Delete(LiDeb); // CouldNotDeleteRecordThatIsReferred
+            // ErrorCodes delete1004 = await CrudAPI.Delete(Deb1004); // delete Debtor
+            await CrudAPI.Insert(LiDeb);
+            return DebString;
+        }
+
+        public async Task<string> Uniconta_Update_Debitor(CrudAPI CrudAPI) {
+            var debtors = await CrudAPI.Query<DebtorClient>();
+            string DebString = "";
+            Debtor UpdatedDebtor = new Debtor();
+            foreach (Debtor deb in debtors) {
+                if (deb._Account == "1004") {
+                    DebString += "Debtors Land was :" + deb._Country;
+                    deb._Country = CountryCode.Germany;
+                    UpdatedDebtor = deb;
+                    DebString += "Debtors Land is now :" + deb._Country;
+                }
+            }
+            await CrudAPI.Update(UpdatedDebtor);
+            return DebString;
+        }
+        public async Task<string> Uniconta_Insert_Debitor(CrudAPI CrudAPI) {
+            string DebString = "";
+            Debtor InsertDebtor = new Debtor() {
                 _Name = "CREADED DEMO",
                 _Account = "42",
                 _Country = CountryCode.Denmark,
                 _Language = Language.da,
                 _VatZone = VatZones.VatFree,
             };
-            // ErrorCodes deleteRes = await CrudAPI.Delete(LiDeb);
-            // ErrorCodes delete1004 = await CrudAPI.Delete(Deb1004); // delete Debtor
-            // DebString += deleteRes.ToString(); // CouldNotDeleteRecordThatIsReferred
-            // DebString += delete1004.ToString();
-            //Thread.Sleep(30000);
-            await CrudAPI.Insert(LiDeb);
+            ErrorCodes res = await CrudAPI.Insert(InsertDebtor);
+            DebString = res.ToString();
             return DebString;
         }
     }

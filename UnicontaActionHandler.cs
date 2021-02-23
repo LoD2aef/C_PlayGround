@@ -29,6 +29,7 @@ namespace WinFormServer {
             }
             return UniActHandler; // return the instand of the CRUD class.
         }
+
         public static UnicontaActionReadOrder Uniconta_GetInstanceRead() {
             if (UniActRead == null) { // 
                 UniActRead = new UnicontaActionReadOrder(); // 
@@ -95,6 +96,15 @@ namespace WinFormServer {
             Uniconta_GetInstanceCRUD();
             string listDeb = await UniActCRUD.Uniconta_Get_Debitor(CrudAPI);
             return listDeb;
+        }
+        internal async Task<string> Uniconta_UpdateDebitorAsync() {
+            Uniconta_GetInstanceCRUD();
+            string UpdatedDeb = await UniActCRUD.Uniconta_Update_Debitor(CrudAPI);
+            return UpdatedDeb;
+        }internal async Task<string> Uniconta_Insert_Debitor() {
+            Uniconta_GetInstanceCRUD();
+            string UpdatedDeb = await UniActCRUD.Uniconta_Insert_Debitor(CrudAPI);
+            return UpdatedDeb;
         }
     }
 }

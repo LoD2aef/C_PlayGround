@@ -34,5 +34,15 @@ namespace WinFormServer {
             string res = await UniAct.Uniconta_GetDebitorsAsync();
             MessageBox.Show(res);
         }
+
+        private async void button6_ClickAsync(object sender, EventArgs e) {
+            string res = await UniAct.Uniconta_UpdateDebitorAsync();
+            MessageBox.Show(res);
+        }
+
+        private async void button7_ClickAsync(object sender, EventArgs e) {
+            string res = await UniAct.Uniconta_Insert_Debitor();
+            MessageBox.Show(res);
+        }
     }
 }
