@@ -70,11 +70,13 @@ namespace WinFormServer {
             int max = arr.Length - 1;
             int key = int.Parse(NumberToFind.Text);
             int runsForKey = 0;
+            int res = 0;
             var watch = System.Diagnostics.Stopwatch.StartNew();
             while (min <= max) {
                 ++runsForKey;
                 int mid = (min + max) / 2;
                 if (key == arr[mid]) { // if item found
+                    res = arr[mid];
                     break;
                 } else if (key < arr[mid]) { // if Key is small then mid 
                     max = mid - 1;
@@ -84,7 +86,7 @@ namespace WinFormServer {
             }
             watch.Stop();
             var time = watch.ElapsedTicks;
-            textBox1.Text += $"(100000)Time used in Big O Algorithm 0(N) {time} ns \n";
+            textBox1.Text += $"(100000)Time used in Big O Algorithm 0(N) {time} ns Res : {res}\n";
             Console.WriteLine("Time used in Big O(N) Binary Search {0} ns. Loop thou " + runsForKey + " to find key", time);
         }
         private void BinaryNestedLoop_Click(object sender, EventArgs e) {

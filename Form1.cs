@@ -121,5 +121,14 @@ namespace WinFormServer {
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
+
+        private void MultiSelect_Click(object sender, EventArgs e) {
+            Thread t = new Thread(() => {
+                MultiSelectForm MSF = new MultiSelectForm();
+                Application.Run(MSF);
+            });
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
     }
 }

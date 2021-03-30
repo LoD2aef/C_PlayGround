@@ -43,6 +43,8 @@ namespace WinFormServer {
                 UnicSess = new Session(UnicConn); // instance a Uniconta Session, where we store the UnicConn.
             }
         }
+
+
         public async Task<string> Uniconta_Login(string username, string password) {
             Uniconta_SetSession(); // call the Uniconta_SetSession method so the sesssion object is instance.
             // Attempting to login. gets a ErrorCodes.Succes if login successful. Async method.
@@ -105,6 +107,11 @@ namespace WinFormServer {
             Uniconta_GetInstanceCRUD();
             string UpdatedDeb = await UniActCRUD.Uniconta_Insert_Debitor(CrudAPI);
             return UpdatedDeb;
+        }
+        internal async Task<string> Uniconta_Delete_Debitor() {
+            Uniconta_GetInstanceCRUD();
+            string DeleteDeb = await UniActCRUD.Uniconta_Delete_Debitor(CrudAPI);
+            return DeleteDeb;
         }
     }
 }

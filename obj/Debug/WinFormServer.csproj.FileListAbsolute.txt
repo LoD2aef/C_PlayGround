@@ -47,3 +47,4 @@ C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaLog
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaLoggedInForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.ReadFileForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.BigOAlgorithms.resources
+C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.MultiSelectForm.resources

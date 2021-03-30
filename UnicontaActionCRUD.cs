@@ -82,10 +82,10 @@ namespace WinFormServer {
         public async Task<string> Uniconta_Get_Debitor(CrudAPI CrudAPI) {
             var debtors = await CrudAPI.Query<DebtorClient>();
             string DebString = "";
-            List<Debtor> LiDeb = new List<Debtor>();
+            // List<Debtor> LiDeb = new List<Debtor>();
             Debtor Deb1004 = new Debtor();
             foreach (Debtor deb in debtors) {
-                LiDeb.Add(deb);
+                // LiDeb.Add(deb);
                 DebString += deb._Name;
                 DebString += " - ";
                 DebString += deb._Account;
@@ -96,7 +96,7 @@ namespace WinFormServer {
             }
             // ErrorCodes deleteRes = await CrudAPI.Delete(LiDeb); // CouldNotDeleteRecordThatIsReferred
             // ErrorCodes delete1004 = await CrudAPI.Delete(Deb1004); // delete Debtor
-            await CrudAPI.Insert(LiDeb);
+            // await CrudAPI.Insert(LiDeb);
             return DebString;
         }
 
@@ -127,6 +127,19 @@ namespace WinFormServer {
             ErrorCodes res = await CrudAPI.Insert(InsertDebtor);
             DebString = res.ToString();
             return DebString;
+        }
+
+        internal async Task<string> Uniconta_Delete_Debitor(CrudAPI CrudAPI) {
+            var debtors = await CrudAPI.Query<DebtorClient>();
+            Debtor Deb1004 = new Debtor();
+            foreach (Debtor deb in debtors) {
+                if (deb._Account == "1004") {
+                    Deb1004 = deb;
+                }
+            }
+            // ErrorCodes deleteRes = await CrudAPI.Delete(LiDeb); // CouldNotDeleteRecordThatIsReferred
+            ErrorCodes delete1004 = await CrudAPI.Delete(Deb1004); // delete Debtor
+            return delete1004.ToString();
         }
     }
 }

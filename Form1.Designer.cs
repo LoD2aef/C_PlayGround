@@ -40,11 +40,12 @@
             this.ShutdownButton = new System.Windows.Forms.Button();
             this.ReadFileButton = new System.Windows.Forms.Button();
             this.BigOAlgorithms = new System.Windows.Forms.Button();
+            this.MultiSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WinFormCalculatorButton
             // 
-            this.WinFormCalculatorButton.Location = new System.Drawing.Point(13, 13);
+            this.WinFormCalculatorButton.Location = new System.Drawing.Point(12, 12);
             this.WinFormCalculatorButton.Name = "WinFormCalculatorButton";
             this.WinFormCalculatorButton.Size = new System.Drawing.Size(75, 23);
             this.WinFormCalculatorButton.TabIndex = 0;
@@ -74,7 +75,7 @@
             // 
             // WinFormTextFormatButton
             // 
-            this.WinFormTextFormatButton.Location = new System.Drawing.Point(13, 42);
+            this.WinFormTextFormatButton.Location = new System.Drawing.Point(12, 41);
             this.WinFormTextFormatButton.Name = "WinFormTextFormatButton";
             this.WinFormTextFormatButton.Size = new System.Drawing.Size(75, 23);
             this.WinFormTextFormatButton.TabIndex = 3;
@@ -94,7 +95,7 @@
             // 
             // WinFormAsync_SyncButton
             // 
-            this.WinFormAsync_SyncButton.Location = new System.Drawing.Point(113, 13);
+            this.WinFormAsync_SyncButton.Location = new System.Drawing.Point(113, 12);
             this.WinFormAsync_SyncButton.Name = "WinFormAsync_SyncButton";
             this.WinFormAsync_SyncButton.Size = new System.Drawing.Size(75, 23);
             this.WinFormAsync_SyncButton.TabIndex = 5;
@@ -105,7 +106,7 @@
             // WinFormSessionButton
             // 
             this.WinFormSessionButton.Enabled = false;
-            this.WinFormSessionButton.Location = new System.Drawing.Point(113, 42);
+            this.WinFormSessionButton.Location = new System.Drawing.Point(113, 41);
             this.WinFormSessionButton.Name = "WinFormSessionButton";
             this.WinFormSessionButton.Size = new System.Drawing.Size(75, 23);
             this.WinFormSessionButton.TabIndex = 6;
@@ -115,7 +116,7 @@
             // 
             // WinFormChatServerButton
             // 
-            this.WinFormChatServerButton.Location = new System.Drawing.Point(213, 13);
+            this.WinFormChatServerButton.Location = new System.Drawing.Point(213, 12);
             this.WinFormChatServerButton.Name = "WinFormChatServerButton";
             this.WinFormChatServerButton.Size = new System.Drawing.Size(75, 23);
             this.WinFormChatServerButton.TabIndex = 7;
@@ -135,7 +136,7 @@
             // 
             // ShutdownButton
             // 
-            this.ShutdownButton.Location = new System.Drawing.Point(313, 226);
+            this.ShutdownButton.Location = new System.Drawing.Point(310, 226);
             this.ShutdownButton.Name = "ShutdownButton";
             this.ShutdownButton.Size = new System.Drawing.Size(75, 23);
             this.ShutdownButton.TabIndex = 9;
@@ -155,7 +156,7 @@
             // 
             // BigOAlgorithms
             // 
-            this.BigOAlgorithms.Location = new System.Drawing.Point(113, 71);
+            this.BigOAlgorithms.Location = new System.Drawing.Point(113, 70);
             this.BigOAlgorithms.Name = "BigOAlgorithms";
             this.BigOAlgorithms.Size = new System.Drawing.Size(75, 23);
             this.BigOAlgorithms.TabIndex = 11;
@@ -163,11 +164,22 @@
             this.BigOAlgorithms.UseVisualStyleBackColor = true;
             this.BigOAlgorithms.Click += new System.EventHandler(this.BigOAlgorithms_Click);
             // 
+            // MultiSelect
+            // 
+            this.MultiSelect.Location = new System.Drawing.Point(310, 12);
+            this.MultiSelect.Name = "MultiSelect";
+            this.MultiSelect.Size = new System.Drawing.Size(75, 23);
+            this.MultiSelect.TabIndex = 12;
+            this.MultiSelect.Text = "Multi Select";
+            this.MultiSelect.UseVisualStyleBackColor = true;
+            this.MultiSelect.Click += new System.EventHandler(this.MultiSelect_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 261);
+            this.Controls.Add(this.MultiSelect);
             this.Controls.Add(this.BigOAlgorithms);
             this.Controls.Add(this.ReadFileButton);
             this.Controls.Add(this.ShutdownButton);
@@ -200,6 +212,7 @@
         private System.Windows.Forms.Button ShutdownButton;
         private System.Windows.Forms.Button ReadFileButton;
         private System.Windows.Forms.Button BigOAlgorithms;
+        private System.Windows.Forms.Button MultiSelect;
     }
 }
 

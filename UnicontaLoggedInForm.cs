@@ -44,5 +44,15 @@ namespace WinFormServer {
             string res = await UniAct.Uniconta_Insert_Debitor();
             MessageBox.Show(res);
         }
+
+        private async void UnicontaLoggedInForm_FormClosedAsync(object sender, FormClosedEventArgs e) {
+            Console.WriteLine("Uniconta Logout Done");
+            await UniAct.Uniconta_LogOut();
+        }
+
+        private async void button8_Click(object sender, EventArgs e) {
+            string res = await UniAct.Uniconta_Delete_Debitor();
+            MessageBox.Show(res);
+        }
     }
 }
