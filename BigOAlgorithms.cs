@@ -185,5 +185,37 @@ namespace WinFormServer {
             }
             return -1; // Element is not present in Array
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            string[] strArr = new string[] { "a", "c", "g", "d", "z", "q", "p" };
+            Array.Sort(strArr);
+            List<string> lst = strArr.ToList();
+            int Res = Array.BinarySearch(strArr, "z");
+            textBox1.Text = Res.ToString() + " \n";
+            lst.Sort();
+            int ress = lst.BinarySearch("z");
+            textBox1.Text += ress.ToString() + " \n";
+            Person[] Klasses = new Person[] { new Person { Navn = "Albeto",Alder = 155,erMan = false },
+                new Person { Navn = "Momonga", Alder = 47, erMan = true }, new Person { Navn="Alpa",Alder=40,erMan=false },
+                new Person { Navn="Sebas",Alder=160,erMan=true},new Person { Navn="Demi",Alder=500,erMan=true}  };
+            Array.Sort(Klasses);
+            Person Albe = new Person { Navn = "Sebas" };
+            int index = Array.BinarySearch<Person>(Klasses, Albe);
+            textBox1.Text += index.ToString() + " \n";
+            textBox1.Text += Klasses[index].Navn;
+
+        }
+        public class Person : IComparable {
+            public string Navn { get; set; }
+            public int Alder { get; set; }
+            public bool erMan { get; set; }
+            int IComparable.CompareTo(object obj) {
+                if (!(obj is Person)) {
+                    throw new ArgumentException("Compared Object is not of Person");
+                }
+                Person person = obj as Person;
+                return Navn.CompareTo(person.Navn);
+            }
+        }
     }
 }

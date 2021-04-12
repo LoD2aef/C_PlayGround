@@ -33,6 +33,7 @@ namespace WinFormServer {
             this.NumberToFind = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BinaryOnBothNestedLoop = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Bool
@@ -121,11 +122,22 @@ namespace WinFormServer {
             this.BinaryOnBothNestedLoop.UseVisualStyleBackColor = true;
             this.BinaryOnBothNestedLoop.Click += new System.EventHandler(this.BinaryOnBothNestedLoop_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Array Bin Sea";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BigOAlgorithms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BinaryOnBothNestedLoop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NumberToFind);
@@ -153,5 +165,6 @@ namespace WinFormServer {
         private System.Windows.Forms.TextBox NumberToFind;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BinaryOnBothNestedLoop;
+        private System.Windows.Forms.Button button1;
     }
 }
