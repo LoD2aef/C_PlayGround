@@ -34,7 +34,6 @@ C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.csprojAssem
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.Async_SyncForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.CalculatorForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.ChatServerForm.resources
-C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.Form1.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.Properties.Resources.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.SessionForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.TextFormatStringForm.resources
@@ -48,3 +47,5 @@ C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.UnicontaLog
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.ReadFileForm.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.BigOAlgorithms.resources
 C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.MultiSelectForm.resources
+C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.AlphaForm.resources
+C:\Users\LoD-T520\source\repos\WinFormServer\obj\Debug\WinFormServer.TimerForm.resources

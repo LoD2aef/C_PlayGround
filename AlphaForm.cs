@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormServer {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class AlphaForm : Form {
+        public AlphaForm() {
             InitializeComponent();
         }
 
@@ -126,6 +126,15 @@ namespace WinFormServer {
             Thread t = new Thread(() => {
                 MultiSelectForm MSF = new MultiSelectForm();
                 Application.Run(MSF);
+            });
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
+
+        private void TimerFormButton_Click(object sender, EventArgs e) {
+            Thread t = new Thread(() => {
+                TimerForm TF = new TimerForm();
+                Application.Run(TF);
             });
             t.SetApartmentState(ApartmentState.STA);
             t.Start();

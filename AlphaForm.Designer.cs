@@ -1,6 +1,6 @@
 ﻿namespace WinFormServer
 {
-    partial class Form1
+    partial class AlphaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.ReadFileButton = new System.Windows.Forms.Button();
             this.BigOAlgorithms = new System.Windows.Forms.Button();
             this.MultiSelect = new System.Windows.Forms.Button();
+            this.TimerFormButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WinFormCalculatorButton
@@ -174,11 +175,22 @@
             this.MultiSelect.UseVisualStyleBackColor = true;
             this.MultiSelect.Click += new System.EventHandler(this.MultiSelect_Click);
             // 
-            // Form1
+            // TimerFormButton
+            // 
+            this.TimerFormButton.Location = new System.Drawing.Point(310, 42);
+            this.TimerFormButton.Name = "TimerFormButton";
+            this.TimerFormButton.Size = new System.Drawing.Size(75, 23);
+            this.TimerFormButton.TabIndex = 13;
+            this.TimerFormButton.Text = "Timer";
+            this.TimerFormButton.UseVisualStyleBackColor = true;
+            this.TimerFormButton.Click += new System.EventHandler(this.TimerFormButton_Click);
+            // 
+            // AlphaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 261);
+            this.Controls.Add(this.TimerFormButton);
             this.Controls.Add(this.MultiSelect);
             this.Controls.Add(this.BigOAlgorithms);
             this.Controls.Add(this.ReadFileButton);
@@ -192,7 +204,7 @@
             this.Controls.Add(this.MessageBoxPrintInfoButton);
             this.Controls.Add(this.PrintFunctionAndCallButton);
             this.Controls.Add(this.WinFormCalculatorButton);
-            this.Name = "Form1";
+            this.Name = "AlphaForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -213,6 +225,7 @@
         private System.Windows.Forms.Button ReadFileButton;
         private System.Windows.Forms.Button BigOAlgorithms;
         private System.Windows.Forms.Button MultiSelect;
+        private System.Windows.Forms.Button TimerFormButton;
     }
 }
 

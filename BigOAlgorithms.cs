@@ -169,7 +169,7 @@ namespace WinFormServer {
             }
             return -1; // Element is not present in Array
         }
-        private int BinarySearchConsoleLog(int[] arr, int min, int max, int key) {
+        public int BinarySearchConsoleLog(int[] arr, int min, int max, int key) {
             //int res = BinarySearch(arr, 0, arr.Length - 1, 99998); // int array, lowers number, array length -1, target to find
             if (max >= min) {
                 int mid = (min + max) / 2;
@@ -186,7 +186,7 @@ namespace WinFormServer {
             return -1; // Element is not present in Array
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void Button1_Click(object sender, EventArgs e) {
             string[] strArr = new string[] { "a", "c", "g", "d", "z", "q", "p" };
             Array.Sort(strArr);
             List<string> lst = strArr.ToList();
@@ -195,9 +195,9 @@ namespace WinFormServer {
             lst.Sort();
             int ress = lst.BinarySearch("z");
             textBox1.Text += ress.ToString() + " \n";
-            Person[] Klasses = new Person[] { new Person { Navn = "Albeto",Alder = 155,erMan = false },
-                new Person { Navn = "Momonga", Alder = 47, erMan = true }, new Person { Navn="Alpa",Alder=40,erMan=false },
-                new Person { Navn="Sebas",Alder=160,erMan=true},new Person { Navn="Demi",Alder=500,erMan=true}  };
+            Person[] Klasses = new Person[] { new Person { Navn = "Albeto",Alder = 155,ErMan = false },
+                new Person { Navn = "Momonga", Alder = 47, ErMan = true }, new Person { Navn="Alpa",Alder=40,ErMan=false },
+                new Person { Navn="Sebas",Alder=160,ErMan=true},new Person { Navn="Demi",Alder=500,ErMan=true}  };
             Array.Sort(Klasses);
             Person Albe = new Person { Navn = "Sebas" };
             int index = Array.BinarySearch<Person>(Klasses, Albe);
@@ -208,7 +208,7 @@ namespace WinFormServer {
         public class Person : IComparable {
             public string Navn { get; set; }
             public int Alder { get; set; }
-            public bool erMan { get; set; }
+            public bool ErMan { get; set; }
             int IComparable.CompareTo(object obj) {
                 if (!(obj is Person)) {
                     throw new ArgumentException("Compared Object is not of Person");
