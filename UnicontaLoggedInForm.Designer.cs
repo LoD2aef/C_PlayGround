@@ -32,6 +32,7 @@ namespace WinFormServer {
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.InvTransButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -114,11 +115,22 @@ namespace WinFormServer {
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // InvTransButton
+            // 
+            this.InvTransButton.Location = new System.Drawing.Point(150, 179);
+            this.InvTransButton.Name = "InvTransButton";
+            this.InvTransButton.Size = new System.Drawing.Size(100, 23);
+            this.InvTransButton.TabIndex = 8;
+            this.InvTransButton.Text = "Postering";
+            this.InvTransButton.UseVisualStyleBackColor = true;
+            this.InvTransButton.Click += new System.EventHandler(this.InvTransButton_Click);
+            // 
             // UnicontaLoggedInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 450);
+            this.Controls.Add(this.InvTransButton);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -144,5 +156,6 @@ namespace WinFormServer {
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button InvTransButton;
     }
 }

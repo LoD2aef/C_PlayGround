@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -139,5 +140,47 @@ namespace WinFormServer {
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
+
+        private void ClassAndObject_Click(object sender, EventArgs e) {
+            object x = new Dog();
+            bool a1 = x is Dog; // true
+            bool a2 = x is Animal; // true
+            bool b1 = x.GetType() == typeof(Dog); // true
+            bool b2 = x.GetType() == typeof(Animal); // false
+            var t = typeof(Animal); // Name = "Animal"
+            var t2 = typeof(Dog); // Name = "Dog"
+            bool c1 = t == typeof(Dog);  // false
+            bool c2 = t2 == typeof(Dog); // true
+            bool c3 = t == typeof(Animal); // true
+            bool c4 = t2 == typeof(Animal); // false
+            bool d1 = typeof(Dog).IsAssignableFrom(x.GetType()); // true
+            bool d2 = typeof(Animal).IsAssignableFrom(x.GetType()); // true
+            bool e1 = t.IsAssignableFrom(x.GetType()); // true
+            bool e2 = t2.IsAssignableFrom(x.GetType()); // true
+        }
+
+        private void SecureStringButton_Click(object sender, EventArgs e) {
+            Thread t = new Thread(() => {
+                SecureStringForm SSF = new SecureStringForm();
+                Application.Run(SSF);
+            });
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
+
+        private void RandomButton_Click(object sender, EventArgs e) {
+            Thread t = new Thread(() => {
+                RandomForm RF = new RandomForm();
+                Application.Run(RF);
+            });
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
+    }
+    class Animal {
+        int legs;
+    }
+    class Dog : Animal {
+        string Size;
     }
 }

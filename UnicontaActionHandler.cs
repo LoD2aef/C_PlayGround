@@ -103,7 +103,8 @@ namespace WinFormServer {
             Uniconta_GetInstanceCRUD();
             string UpdatedDeb = await UniActCRUD.Uniconta_Update_Debitor(CrudAPI);
             return UpdatedDeb;
-        }internal async Task<string> Uniconta_Insert_Debitor() {
+        }
+        internal async Task<string> Uniconta_Insert_Debitor() {
             Uniconta_GetInstanceCRUD();
             string UpdatedDeb = await UniActCRUD.Uniconta_Insert_Debitor(CrudAPI);
             return UpdatedDeb;
@@ -112,6 +113,15 @@ namespace WinFormServer {
             Uniconta_GetInstanceCRUD();
             string DeleteDeb = await UniActCRUD.Uniconta_Delete_Debitor(CrudAPI);
             return DeleteDeb;
+        }
+        
+        public async void UnicontaInvTransAsync() {
+            InvTrans invPosting = new InvTrans {
+                _Date = DateTime.Now,
+                // _OrderNumber
+            };
+            ErrorCodes result = await CrudAPI.Insert(invPosting);
+            Console.WriteLine(result); // ErrorCodes.NoRightsToInsert
         }
     }
 }

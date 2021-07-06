@@ -102,11 +102,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandomForm.Designer.cs">
+      <DependentUpon>RandomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReadFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReadFileForm.Designer.cs">
       <DependentUpon>ReadFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecureStringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecureStringForm.Designer.cs">
+      <DependentUpon>SecureStringForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SessionForm.cs">
       <SubType>Form</SubType>
@@ -171,8 +183,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RandomForm.resx">
+      <DependentUpon>RandomForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReadFileForm.resx">
       <DependentUpon>ReadFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecureStringForm.resx">
+      <DependentUpon>SecureStringForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SessionForm.resx">
       <DependentUpon>SessionForm.cs</DependentUpon>

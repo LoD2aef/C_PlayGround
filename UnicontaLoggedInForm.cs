@@ -54,5 +54,9 @@ namespace WinFormServer {
             string res = await UniAct.Uniconta_Delete_Debitor();
             MessageBox.Show(res);
         }
+
+        private void InvTransButton_Click(object sender, EventArgs e) {
+            UniAct.UnicontaInvTransAsync();
+        }
     }
 }

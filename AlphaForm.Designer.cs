@@ -39,9 +39,12 @@
             this.WinFormChatClientButton = new System.Windows.Forms.Button();
             this.ShutdownButton = new System.Windows.Forms.Button();
             this.ReadFileButton = new System.Windows.Forms.Button();
-            this.BigOAlgorithms = new System.Windows.Forms.Button();
-            this.MultiSelect = new System.Windows.Forms.Button();
+            this.BigOAlgorithmsButton = new System.Windows.Forms.Button();
+            this.MultiSelectButton = new System.Windows.Forms.Button();
             this.TimerFormButton = new System.Windows.Forms.Button();
+            this.ClassAndObjectButton = new System.Windows.Forms.Button();
+            this.SecureStringButton = new System.Windows.Forms.Button();
+            this.RandomButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WinFormCalculatorButton
@@ -155,25 +158,25 @@
             this.ReadFileButton.UseVisualStyleBackColor = true;
             this.ReadFileButton.Click += new System.EventHandler(this.ReadFileButton_Click);
             // 
-            // BigOAlgorithms
+            // BigOAlgorithmsButton
             // 
-            this.BigOAlgorithms.Location = new System.Drawing.Point(113, 70);
-            this.BigOAlgorithms.Name = "BigOAlgorithms";
-            this.BigOAlgorithms.Size = new System.Drawing.Size(75, 23);
-            this.BigOAlgorithms.TabIndex = 11;
-            this.BigOAlgorithms.Text = "Big-O";
-            this.BigOAlgorithms.UseVisualStyleBackColor = true;
-            this.BigOAlgorithms.Click += new System.EventHandler(this.BigOAlgorithms_Click);
+            this.BigOAlgorithmsButton.Location = new System.Drawing.Point(113, 70);
+            this.BigOAlgorithmsButton.Name = "BigOAlgorithmsButton";
+            this.BigOAlgorithmsButton.Size = new System.Drawing.Size(75, 23);
+            this.BigOAlgorithmsButton.TabIndex = 11;
+            this.BigOAlgorithmsButton.Text = "Big-O";
+            this.BigOAlgorithmsButton.UseVisualStyleBackColor = true;
+            this.BigOAlgorithmsButton.Click += new System.EventHandler(this.BigOAlgorithms_Click);
             // 
-            // MultiSelect
+            // MultiSelectButton
             // 
-            this.MultiSelect.Location = new System.Drawing.Point(310, 12);
-            this.MultiSelect.Name = "MultiSelect";
-            this.MultiSelect.Size = new System.Drawing.Size(75, 23);
-            this.MultiSelect.TabIndex = 12;
-            this.MultiSelect.Text = "Multi Select";
-            this.MultiSelect.UseVisualStyleBackColor = true;
-            this.MultiSelect.Click += new System.EventHandler(this.MultiSelect_Click);
+            this.MultiSelectButton.Location = new System.Drawing.Point(310, 12);
+            this.MultiSelectButton.Name = "MultiSelectButton";
+            this.MultiSelectButton.Size = new System.Drawing.Size(75, 23);
+            this.MultiSelectButton.TabIndex = 12;
+            this.MultiSelectButton.Text = "Multi Select";
+            this.MultiSelectButton.UseVisualStyleBackColor = true;
+            this.MultiSelectButton.Click += new System.EventHandler(this.MultiSelect_Click);
             // 
             // TimerFormButton
             // 
@@ -185,14 +188,47 @@
             this.TimerFormButton.UseVisualStyleBackColor = true;
             this.TimerFormButton.Click += new System.EventHandler(this.TimerFormButton_Click);
             // 
+            // ClassAndObjectButton
+            // 
+            this.ClassAndObjectButton.Location = new System.Drawing.Point(213, 71);
+            this.ClassAndObjectButton.Name = "ClassAndObjectButton";
+            this.ClassAndObjectButton.Size = new System.Drawing.Size(75, 23);
+            this.ClassAndObjectButton.TabIndex = 14;
+            this.ClassAndObjectButton.Text = "Object";
+            this.ClassAndObjectButton.UseVisualStyleBackColor = true;
+            this.ClassAndObjectButton.Click += new System.EventHandler(this.ClassAndObject_Click);
+            // 
+            // SecureStringButton
+            // 
+            this.SecureStringButton.Location = new System.Drawing.Point(310, 70);
+            this.SecureStringButton.Name = "SecureStringButton";
+            this.SecureStringButton.Size = new System.Drawing.Size(75, 23);
+            this.SecureStringButton.TabIndex = 15;
+            this.SecureStringButton.Text = "Secure Str";
+            this.SecureStringButton.UseVisualStyleBackColor = true;
+            this.SecureStringButton.Click += new System.EventHandler(this.SecureStringButton_Click);
+            // 
+            // RandomButton
+            // 
+            this.RandomButton.Location = new System.Drawing.Point(13, 100);
+            this.RandomButton.Name = "RandomButton";
+            this.RandomButton.Size = new System.Drawing.Size(75, 23);
+            this.RandomButton.TabIndex = 16;
+            this.RandomButton.Text = "Random";
+            this.RandomButton.UseVisualStyleBackColor = true;
+            this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
+            // 
             // AlphaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 261);
+            this.Controls.Add(this.RandomButton);
+            this.Controls.Add(this.SecureStringButton);
+            this.Controls.Add(this.ClassAndObjectButton);
             this.Controls.Add(this.TimerFormButton);
-            this.Controls.Add(this.MultiSelect);
-            this.Controls.Add(this.BigOAlgorithms);
+            this.Controls.Add(this.MultiSelectButton);
+            this.Controls.Add(this.BigOAlgorithmsButton);
             this.Controls.Add(this.ReadFileButton);
             this.Controls.Add(this.ShutdownButton);
             this.Controls.Add(this.WinFormChatClientButton);
@@ -223,9 +259,12 @@
         private System.Windows.Forms.Button WinFormChatClientButton;
         private System.Windows.Forms.Button ShutdownButton;
         private System.Windows.Forms.Button ReadFileButton;
-        private System.Windows.Forms.Button BigOAlgorithms;
-        private System.Windows.Forms.Button MultiSelect;
+        private System.Windows.Forms.Button BigOAlgorithmsButton;
+        private System.Windows.Forms.Button MultiSelectButton;
         private System.Windows.Forms.Button TimerFormButton;
+        private System.Windows.Forms.Button ClassAndObjectButton;
+        private System.Windows.Forms.Button SecureStringButton;
+        private System.Windows.Forms.Button RandomButton;
     }
 }
 
