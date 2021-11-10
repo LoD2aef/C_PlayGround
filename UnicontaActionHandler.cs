@@ -8,7 +8,7 @@ using Uniconta.DataModel;
 
 namespace WinFormServer {
     class UnicontaActionHandler {
-        private Guid APIGuidKey = new Guid("866f316d-d0be-4b60-adac-7a86e3b9f51a"); // API key
+        private Guid APIGuidKey = new Guid("0"); // API key
         private CrudAPI CrudAPI; // variable for Uniconta CrudAPI. Use for CRUD functionalities.
         private Company BaseCompany; // variable for Uniconta Company. What Company data shall have data manipulation.
         private Session UnicSess; // variable for Uniconta Session with UnicontaConnection to the APITarget server.
